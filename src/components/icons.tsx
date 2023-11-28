@@ -1,4 +1,11 @@
-  export function Edit({ className }: React.SVGProps<SVGSVGElement>) {
+import React from "react";
+
+interface iconProps {
+  className: string;
+  onClick: () => void;
+}
+
+export const Edit: React.FC<iconProps> = ({ className, onClick }: iconProps) => {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -6,8 +13,8 @@
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={className}
-        style={{ cursor: 'pointer', color: 'blue', height: '28px', width: 'auto' }}
+        className={`text-blue-700 h-7 w-auto cursor-pointer  ${className}`}
+        onClick={onClick}
       >
         <path
           strokeLinecap="round"
@@ -17,7 +24,8 @@
       </svg>
     );
   }
-  export function Delete({ className }: React.SVGProps<SVGSVGElement>) {
+
+  export const Delete: React.FC<iconProps> = ({ className, onClick }: iconProps) => {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +33,8 @@
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={className}
-        style={{ cursor: 'pointer', color: 'red', height: '28px', width: 'auto' }}
+        className={`text-red-600 h-7 w-auto cursor-pointer ${className}`}
+        onClick={onClick}
       >
         <path
           strokeLinecap="round"
@@ -35,8 +43,9 @@
         />
       </svg>
     );
-  }
-  export function MoveToNext({ className }: React.SVGProps<SVGSVGElement>) {
+  };
+  
+  export const MoveToNext: React.FC<iconProps> = ({ className, onClick }: iconProps) => {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +53,8 @@
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={className}
-        style={{ cursor: 'pointer', color: 'green', height: '30px', width: 'auto' }}
+        className={`text-green-600 h-8 w-auto cursor-pointer  ${className}`}
+        onClick={onClick}
       >
         <path
           strokeLinecap="round"
@@ -55,3 +64,24 @@
       </svg>
     );
   }
+
+
+  export const Save: React.FC<iconProps> = ({ className, onClick }: iconProps) => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className={`text-green-600 h-8 w-auto cursor-pointer ${className}`}
+        onClick={onClick}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+        />
+      </svg>
+    );
+  };

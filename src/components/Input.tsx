@@ -4,18 +4,20 @@ interface InputProps {
   customClass: string;
   placeholder: string;
   onChange: (value: string) => void;
+  value: string;
 }
 
-const Input: React.FC<InputProps> = ({ customClass, placeholder, onChange }) => {
-
+const Input: React.FC<InputProps> = ({ customClass, placeholder, onChange, value }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
-  }; 
+  };
+
   return (
     <input
-      className={`w-72 outline-none font-normal border border-black ${customClass}`}
+      className={`w-full outline-none font-normal border border-black ${customClass}`}
       placeholder={placeholder}
       onChange={handleChange}
+      value={value}
     />
   );
 };
